@@ -22,7 +22,7 @@ STUDENT_ID = "BSCS 23139"
 @app.middleware("http")
 async def add_student_id_header(request: Request, call_next):
     response = await call_next(request)
-    response.headers["Student-ID"] = STUDENT_ID
+    response.headers["X-Student-ID"] = STUDENT_ID
     return response
 
 
